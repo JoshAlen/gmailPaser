@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emails</h1> 
+<%= link_to 'New Email', new_email_path, class: 'btn btn-large btn-danger btn-block' %>
+
+<% @emails.each do |email| %>
+  <div class="card mt-2">
+    <div class="card-block">
+      <p class="card-text"><%=h truncate(email.text, :length => 100) %></p>
+        <%= link_to 'Show', email, class: 'card-link' %>
+        <%= link_to 'Edit', edit_email_path(email), class: 'card-link' %>
+        <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+    </div>
+  </div>
+<% end %>
+   
+      
+

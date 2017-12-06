@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="card">
+	<div class="container">
+	  	<div class="card-block">
+		    <h4 class="card-title"><%= @message_id %></h4>
+		    <p class="card-text"><%= @email_received %></p>
+		    <p class="card-text"><%= @email_from %></p>
+		    <p class="card-text"><%= @delivered_to %></p>
+		    <p class="card-text"><%= @email_subject %></p>
+		    <%= link_to 'Edit', edit_email_path(@email), class: 'card-link btn btn-info' %>
+			<%= link_to 'Back', emails_path, class: 'card-link btn btn-dark' %>
+  		</div>	
+	</div>
+</div>
+
+  
+  
+  
+  
+  
+
+

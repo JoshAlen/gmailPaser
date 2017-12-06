@@ -1,0 +1,22 @@
+<%= form_with(model: email, local: true) do |form| %>
+  <% if email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(email.errors.count, "error") %> prohibited this email from being saved:</h2>
+
+      <ul>
+      <% email.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "Copy and Paste a original text file of a raw email here:" %>
+    <%= form.text_area :text, id: :email_text, class: 'form-control', rows: 10 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Parse Email", class: 'btn btn-primary' %>
+  </div>
+<% end %>
