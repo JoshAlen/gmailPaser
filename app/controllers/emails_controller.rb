@@ -6,6 +6,7 @@ class EmailsController < ApplicationController
   end
 
   def show
+    #setting instance vaiables by calling private method to send data into show controller
     @delivered_to = get_delivered_to(@email)
     @message_id = get_message_id(@email)
     @email_subject = get_email_subject(@email)
@@ -59,6 +60,9 @@ class EmailsController < ApplicationController
       params.require(:email).permit(:text)
     end
 
+    #Created 5 methods with regular expression with each 
+    #Each method return data matching field.
+    #I think I could have make it more simple if I could setup variable inside regular expression
     def get_delivered_to(email)
       email.text.match(/Delivered-To: .*/)
     end
